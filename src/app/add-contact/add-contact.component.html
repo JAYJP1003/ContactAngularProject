@@ -1,1 +1,68 @@
-<p>add-contact works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col">
+          <p class="h3 fw-bold text-primary">Add New Contact</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <form>
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Name" />
+            </div>
+
+            <div class="mb-2 input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Phone Number"
+              />
+              <select name="" id="" class="border ms-1 me-1">
+                <option value="">Type</option>
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="other">Other</option>
+              </select>
+              <div>
+                <button class="btn btn-success">+</button>
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Email(Optional)"
+              />
+            </div>
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="PhotoUrl" />
+            </div>
+            <div class="mb-2">
+              <input type="submit" class="btn btn-success " placeholder="Submit" />
+              <a routerLink="/" class="btn btn-warning"> Back</a>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-sm-4">
+          <img src="https://thumbs.dreamstime.com/b/call-icon-vector-male-user-person-profile-avatar-phone-symbol-business-contact-communication-flat-color-glyph-call-145960363.jpg" alt="" class="contact-img">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
