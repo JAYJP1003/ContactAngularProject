@@ -1,12 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 
-body{
+body {
     font-family: 'Fredoka', sans-serif;
 }
 
-.contact-img{
+.contact-img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+}
+
+.contact-img-details {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.side-by-side {
+    display: inline-block;
+}
+
+ul {
+    list-style-type: none;
 }
