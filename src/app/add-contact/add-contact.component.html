@@ -20,12 +20,12 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
-          <form>
+          <form [formGroup]="reactiveForm">
             <div class="mb-2">
-              <input type="text" class="form-control" placeholder="Name" />
+              <input type="text" class="form-control" placeholder="Name" formControlName="fname" />
             </div>
 
-            <div class="mb-2 input-group">
+            <div class="mb-2 input-group" *ngFor="let item of items">
               <input
                 type="text"
                 class="form-control"
@@ -38,7 +38,10 @@
                 <option value="other">Other</option>
               </select>
               <div>
-                <button class="btn btn-success">+</button>
+                <button class="btn btn-success" type="button" (click)="showOutput()">+</button>
+                <div >
+
+                </div>
               </div>
             </div>
 
@@ -53,7 +56,7 @@
               <input type="text" class="form-control" placeholder="PhotoUrl" />
             </div>
             <div class="mb-2">
-              <input type="submit" class="btn btn-success " placeholder="Submit" />
+              <input type="submit" class="btn btn-success " placeholder="Submit" (click)="showOutput()"/>
               <a routerLink="/" class="btn btn-warning"> Back</a>
             </div>
           </form>
