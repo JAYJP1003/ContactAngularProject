@@ -24,7 +24,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
-          <form [formGroup]="reactiveForm">
+          <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
             <div class="mb-2">
               <input
                 type="text"
@@ -115,7 +115,6 @@
                 type="submit"
                 class="btn btn-success me-2"
                 placeholder="Submit"
-                (click)="onSubmit()"
               />
               <a routerLink="/" class="btn btn-warning"> Back</a>
             </div>
