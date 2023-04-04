@@ -16,22 +16,76 @@
     </div>
 
     <!-- Contact Form -->
-
+    <div>
+      <button class="btn btn-success" type="button" (click)="showOutput()">
+        + Add
+      </button>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-sm-4">
           <form [formGroup]="reactiveForm">
             <div class="mb-2">
-              <input type="text" class="form-control" placeholder="Name" formControlName="fname" />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Name"
+                formControlName="fname"
+              />
             </div>
 
-            <div class="mb-2 input-group" *ngFor="let item of items">
+            <!-- <div class="mb-2 input-group" *ngFor="let item of items">
               <input
                 type="text"
                 class="form-control"
                 placeholder="Phone Number"
+                formArrayName="phoneNumber"
               />
-              <select name="" id="" class="border ms-1 me-1">
+              <select
+                name=""
+                id=""
+                class="border ms-1 me-1"
+                formControlName="type"
+              >
+                <option value="">Type</option>
+                <option value="personal">Personal</option>
+                <option value="work">Work</option>
+                <option value="other">Other</option>
+              </select>
+            </div> -->
+            <div formArrayName="phoneNumber">
+              <div class="mb-2 input-group" *ngFor="let item of reactiveForm.get('phoneNumber')['controls']; index as ind" [formGroupName]="ind">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Phone Number"
+                  formControlName="number"
+                />
+                <select
+                  name=""
+                  id=""
+                  class="border ms-1 me-1"
+                  formControlName="ptype"
+                >
+                  <option value="">Type</option>
+                  <option value="personal">Personal</option>
+                  <option value="work">Work</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- <div class="mb-2 input-group" *ngFor="let item of items; index as i">
+              <div formArrayName="phoneNumber">
+                <input
+                type="text"
+                class="form-control"
+                placeholder="Phone Number"
+                formControlName="{{i}}"
+              />
+              </div>
+             
+              <select name="" id="" class="border ms-1 me-1" formControlName="type">
                 <option value="">Type</option>
                 <option value="personal">Personal</option>
                 <option value="work">Work</option>
@@ -43,27 +97,37 @@
 
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="mb-2">
               <input
                 type="text"
                 class="form-control"
                 placeholder="Email(Optional)"
+                formControlName="email"
               />
             </div>
             <div class="mb-2">
               <input type="text" class="form-control" placeholder="PhotoUrl" />
             </div>
             <div class="mb-2">
-              <input type="submit" class="btn btn-success " placeholder="Submit" (click)="showOutput()"/>
+              <input
+                type="submit"
+                class="btn btn-success me-2"
+                placeholder="Submit"
+                (click)="onSubmit()"
+              />
               <a routerLink="/" class="btn btn-warning"> Back</a>
             </div>
           </form>
         </div>
 
         <div class="col-sm-4">
-          <img src="https://thumbs.dreamstime.com/b/call-icon-vector-male-user-person-profile-avatar-phone-symbol-business-contact-communication-flat-color-glyph-call-145960363.jpg" alt="" class="contact-img">
+          <img
+            src="https://thumbs.dreamstime.com/b/call-icon-vector-male-user-person-profile-avatar-phone-symbol-business-contact-communication-flat-color-glyph-call-145960363.jpg"
+            alt=""
+            class="contact-img"
+          />
         </div>
       </div>
     </div>

@@ -7,8 +7,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ViewContactComponent } from './view-contact/view-contact.component';
 
 const routes: Routes = [
-  {path:'', redirectTo: 'contacts/admin', pathMatch:'full'},
-  {path:'contacts/admin', component: ContactManagerComponent},
+  {path:'', redirectTo: 'persons', pathMatch:'full'},
+  {path:'persons', component: ContactManagerComponent},
   {path:'contacts/add', component: AddContactComponent},
   {path:'contacts/edit/:contactId', component: EditContactComponent},
   {path:'contacts/view/:contactId', component: ViewContactComponent},
